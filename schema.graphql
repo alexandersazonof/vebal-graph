@@ -1,0 +1,54 @@
+type ChangeFeeDistributor @entity(immutable: true) {
+  id: Bytes!
+  oldValue: Bytes! # address
+  newValue: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ChangeGaugeController @entity(immutable: true) {
+  id: Bytes!
+  oldValue: Bytes! # address
+  newValue: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ChangeOperator @entity(immutable: true) {
+  id: Bytes!
+  oldValue: Bytes! # address
+  newValue: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ChangeVoter @entity(immutable: true) {
+  id: Bytes!
+  oldValue: Bytes! # address
+  newValue: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ContractInitialized @entity(immutable: true) {
+  id: Bytes!
+  controller: Bytes! # address
+  ts: BigInt! # uint256
+  block: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type LinkGaugeToDistributor @entity(immutable: true) {
+  id: Bytes!
+  gauge: Bytes! # address
+  depositor: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

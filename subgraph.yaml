@@ -1,0 +1,41 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: VeBalContract
+    network: mainnet
+    source:
+      address: "0x9cc56fa7734da21ac88f6a816af10c5b898596ce"
+      abi: VeBalContract
+      startBlock: 14704850
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ChangeFeeDistributor
+        - ChangeGaugeController
+        - ChangeOperator
+        - ChangeVoter
+        - ContractInitialized
+        - LinkGaugeToDistributor
+      abis:
+        - name: VeBalContract
+          file: ./abis/VeBalContract.json
+      eventHandlers:
+        - event: ChangeFeeDistributor(address,address)
+          handler: handleChangeFeeDistributor
+        - event: ChangeGaugeController(address,address)
+          handler: handleChangeGaugeController
+        - event: ChangeOperator(address,address)
+          handler: handleChangeOperator
+        - event: ChangeVoter(address,address)
+          handler: handleChangeVoter
+        - event: ContractInitialized(address,uint256,uint256)
+          handler: handleContractInitialized
+        - event: LinkGaugeToDistributor(address,address)
+          handler: handleLinkGaugeToDistributor
+      file: ./src/ve-bal-contract.ts
