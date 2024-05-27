@@ -1,8 +1,8 @@
 {
   "mainnet": {
     "VeBalContract": {
-      "address": "0x9cc56fa7734da21ac88f6a816af10c5b898596ce",
-      "startBlock": 14704850
+      "address": "0xC128a9954E6c874EA3D62ce62b468BA073093f25",
+      "startBlock": 19952139
     }
   }
 }
